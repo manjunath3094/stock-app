@@ -1,0 +1,14 @@
+server:
+  port: 4444
+spring:
+  application:
+    name: STOCK-API-GATEWAY
+zuul:
+  prefix: /stock
+  routes:
+    price:
+      path: /price/**
+      serviceId: STOCK-PRICE-SERVICE
+    calc:
+      path: /calc/**
+      serviceId: STOCK-CALCULATION-SERVICE
